@@ -37,7 +37,7 @@ const projects = [
         tags: ["React.js", "E-commerce", "Admin Dashboard", "UI/UX"],
         image: "/projects/sweet-shop.png",
         gitLink: "sweet-shop-frontend",
-        liveLink: "https://sweet-shop-frontend.vercel.app"
+        liveLink: "https://sweet-shop-iota.vercel.app/"
     }
 ];
 
