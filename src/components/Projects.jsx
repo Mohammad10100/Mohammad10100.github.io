@@ -21,7 +21,9 @@ const projects = [
         title: "E Bazaar",
         description: "An Agricultural E-commerce platform enabling farmers to directly sell crops to buyers. Includes auth, sales tracking, CRUD operations, and a membership system.",
         tags: ["React.js", "Firebase", "MongoDB", "SCSS"],
-        image: "/projects/ebazaar.png"
+        image: "/projects/ebazaar.png",
+        liveLink: "https://e-bazaar-agro.vercel.app",
+        gitLink: "E-Bazaar-Agro"
     },
     {
         title: "Movie Recommendation System",
@@ -37,7 +39,7 @@ const projects = [
         tags: ["React.js", "E-commerce", "Admin Dashboard", "UI/UX"],
         image: "/projects/sweet-shop.png",
         gitLink: "sweet-shop-frontend",
-        liveLink: "https://sweet-shop-iota.vercel.app/"
+        liveLink: "https://sweet-shop-iota.vercel.app"
     }
 ];
 
@@ -83,12 +85,24 @@ const Projects = () => {
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{project.title}</h3>
                                     <div className="flex gap-3 text-gray-400">
-                                        <a href={`https://github.com/mohammad10100/${project.gitLink}`} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                                            <Code size={20} />
-                                        </a>
-                                        <a href={project.liveLink} target="_blank" rel="noreferrer" className="hover:text-white transition-colors opacity-50 cursor-not-allowed" title="Live demo not available">
-                                            <ExternalLink size={20} />
-                                        </a>
+                                        {project.gitLink ? (
+                                            <a href={`https://github.com/mohammad10100/${project.gitLink}`} target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="View Source">
+                                                <Code size={20} />
+                                            </a>
+                                        ) : (
+                                            <span className="text-gray-400 opacity-50 cursor-not-allowed" title="Source code not available">
+                                                <Code size={20} />
+                                            </span>
+                                        )}
+                                        {project.liveLink ? (
+                                            <a href={project.liveLink} target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="Live Demo">
+                                                <ExternalLink size={20} />
+                                            </a>
+                                        ) : (
+                                            <span className="text-gray-400 opacity-50 cursor-not-allowed" title="Live demo not available">
+                                                <ExternalLink size={20} />
+                                            </span>
+                                        )}
                                     </div>
                                 </div>
 
